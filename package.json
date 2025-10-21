@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development tsx watch _core/index.ts",
     "build": "rm -rf dist && mkdir -p dist && esbuild _core/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js",
-    "start": "NODE_ENV=production node dist/index.js",
+    "start": "NODE_ENV=production tsx _core/index.ts",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",
@@ -76,7 +76,8 @@
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
     "wouter": "^3.3.5",
-    "zod": "^4.1.12"
+    "zod": "^4.1.12",
+    "tsx": "^4.19.1"
   },
   "devDependencies": {
     "@builder.io/vite-plugin-jsx-loc": "^0.1.1",
@@ -95,7 +96,6 @@
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.14",
-    "tsx": "^4.19.1",
     "tw-animate-css": "^1.4.0",
     "typescript": "5.9.3",
     "vite": "^7.1.7",
